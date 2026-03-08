@@ -1,0 +1,9 @@
+{
+  "name": "Copy of Clever Works STC CARDS",
+  "description": "Digital Manhole Survey Card application for on-site civil engineers. Features PDF generation, photo management, and AI-powered assistance.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

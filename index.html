@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clever Works Smart Survey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              brand: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                200: '#bae6fd',
+                300: '#7dd3fc',
+                400: '#38bdf8',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985',
+                900: '#0c4a6e',
+                950: '#082f49',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @media print {
+        @page { 
+          size: A4; 
+          margin: 0; 
+        }
+        body { 
+          -webkit-print-color-adjust: exact; 
+          print-color-adjust: exact; 
+          background: white; 
+        }
+        .no-print { display: none !important; }
+        .page-segment {
+          width: 210mm;
+          height: 297mm;
+          padding: 10mm !important;
+          margin: 0 !important;
+          box-shadow: none !important;
+          border: none !important;
+          page-break-after: always;
+          overflow: hidden;
+          position: relative;
+        }
+        .page-segment:last-child {
+          page-break-after: auto;
+        }
+        /* Only hide borders for text inputs/selects to make them look like filled form lines */
+        input:not([type="checkbox"]):not([type="radio"]), select, textarea { 
+          border: none !important; 
+          background: transparent !important; 
+          resize: none; 
+          appearance: none; 
+          padding: 0 !important; 
+        }
+        /* Explicitly force appearance for checkboxes and radios */
+        input[type="checkbox"], input[type="radio"] {
+            appearance: auto !important;
+            -webkit-appearance: auto !important;
+            display: inline-block !important;
+        }
+      }
+      
+      .page-segment {
+        width: 100%;
+        max-width: 210mm;
+        margin: 0 auto 20px;
+        background: white;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        padding: 10mm;
+        border: 1px solid #e2e8f0;
+        transition: box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-30deg);
+        opacity: 0.1; /* Approx 50% faded in terms of perceived watermark strength */
+        pointer-events: none;
+        width: 400%; /* 400% Enlarged as requested */
+        z-index: 0;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-100 text-slate-900 antialiased">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
